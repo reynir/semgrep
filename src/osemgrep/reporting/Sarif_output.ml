@@ -1,10 +1,11 @@
 open Common
 module OutT = Semgrep_output_v1_t
+module Sarif_v = Sarif.Sarif_v_2_1_0_v
 
 let sarif_severity_of_severity = function
-  | `Info -> "note"
-  | `Warning -> "warning"
-  | `Error -> "error"
+  | `Info -> `Note
+  | `Warning -> `Warning
+  | `Error -> `Error
   | `Experiment
   | `Inventory ->
       raise Todo
@@ -72,11 +73,10 @@ let rules hide_nudge (hrules : Rule.hrules) =
           | None -> spf "Semgrep Finding: %s" (Rule_ID.to_string rule_id)
         and source, rule_url =
           match JSON.member "source" metadata with
-          | Some (JSON.String source) ->
-              (Some source, [ ("helpUri", `String source) ])
+          | Some (JSON.String source) -> (Some source, Some source)
           | Some _
           | None ->
-              (None, [])
+              (None, None)
         and rule_help_text =
           match JSON.member "help" metadata with
           | Some (JSON.String txt) -> txt
@@ -87,14 +87,19 @@ let rules hide_nudge (hrules : Rule.hrules) =
         let security_severity =
           (* TODO: no test case for this *)
           match JSON.member "security-severity" metadata with
-          | Some json -> [ ("security-severity", JSON.to_yojson json) ]
+          | Some json ->
+              (* FIXME [ ("security-severity", JSON.to_yojson json) ] *)
+              ignore json;
+              []
           | None -> []
         in
         let properties =
           let tags = tags_of_metadata metadata in
           [
-            ("precision", `String "very-high");
-            ("tags", `List (List_.map (fun s -> `String s) tags));
+            ("precision", (*`String*) "very-high");
+            ( "tags",
+              (*FIXME: `List (List_.map (fun s -> `String s) tags));*)
+              String.concat "," tags );
           ]
           @ security_severity
         in
@@ -133,29 +138,29 @@ let rules hide_nudge (hrules : Rule.hrules) =
           | [] -> ""
           | xs -> "\n\n<b>References:</b>\n" ^ String.concat "" xs
         in
-        `Assoc
-          ([
-             ("id", `String (Rule_ID.to_string rule_id));
-             ("name", `String (Rule_ID.to_string rule_id));
-             ("shortDescription", `Assoc [ ("text", `String short_description) ]);
-             ("fullDescription", `Assoc [ ("text", `String rule.message) ]);
-             ( "defaultConfiguration",
-               `Assoc
-                 [
-                   ("level", `String (sarif_severity_of_severity rule.severity));
-                 ] );
-             ( "help",
-               `Assoc
-                 [
-                   ("text", `String (rule_help_text ^ text_suffix));
-                   ( "markdown",
-                     `String
-                       (rule_help_text ^ markdown_interstitial
-                      ^ references_markdown) );
-                 ] );
-             ("properties", `Assoc properties);
-           ]
-          @ rule_url))
+        let default_configuration =
+          Sarif_v.create_reporting_configuration
+            ~level:(sarif_severity_of_severity rule.severity)
+            ()
+        in
+        let help =
+          Sarif_v.create_multiformat_message_string
+            ~text:(rule_help_text ^ text_suffix)
+            ~markdown:
+              (rule_help_text ^ markdown_interstitial ^ references_markdown)
+            ()
+        in
+        let short_description =
+          Sarif_v.create_multiformat_message_string ~text:short_description ()
+        in
+        let full_description =
+          Sarif_v.create_multiformat_message_string ~text:rule.message ()
+        in
+        Sarif_v.create_reporting_descriptor
+          ~name:(Rule_ID.to_string rule_id)
+          ~id:(Rule_ID.to_string rule_id)
+          ~short_description ~full_description ~default_configuration ~help
+          ~properties ?help_uri:rule_url ())
       rules
   in
   List.of_seq rules
@@ -174,61 +179,44 @@ let fixed_lines (cli_match : OutT.cli_match) fix =
       []
 
 let sarif_fix (cli_match : OutT.cli_match) =
-  match cli_match.extra.fixed_lines with
-  | None -> []
-  | Some fixed_lines ->
+  match cli_match.extra.fix with
+  | None -> None
+  | Some fix ->
+      let fixed_lines = fixed_lines cli_match fix in
       let description_text =
         spf "%s\n Autofix: Semgrep rule suggested fix" cli_match.extra.message
       in
-      [
-        ( "fixes",
-          `List
-            [
-              `Assoc
-                [
-                  ("description", `Assoc [ ("text", `String description_text) ]);
-                  ( "artifactChanges",
-                    `List
-                      [
-                        `Assoc
-                          [
-                            ( "artifactLocation",
-                              `Assoc
-                                [
-                                  ( "uri",
-                                    `String (Fpath.to_string cli_match.path) );
-                                ] );
-                            ( "replacements",
-                              `List
-                                [
-                                  `Assoc
-                                    [
-                                      ( "deletedRegion",
-                                        `Assoc
-                                          [
-                                            ( "startLine",
-                                              `Int cli_match.start.line );
-                                            ( "startColumn",
-                                              `Int cli_match.start.col );
-                                            ("endLine", `Int cli_match.end_.line);
-                                            ( "endColumn",
-                                              `Int cli_match.end_.col );
-                                          ] );
-                                      ( "insertedContent",
-                                        `Assoc
-                                          [
-                                            ( "text",
-                                              `String
-                                                (String.concat "\n" fixed_lines)
-                                            );
-                                          ] );
-                                    ];
-                                ] );
-                          ];
-                      ] );
-                ];
-            ] );
-      ]
+      let artifact_change =
+        let artifact_location =
+          Sarif_v.create_artifact_location
+            ~uri:(Fpath.to_string cli_match.path)
+            ()
+        in
+        let replacement =
+          let region =
+            Sarif_v.create_region
+              ~start_line:(Int64.of_int cli_match.start.line)
+              ~start_column:(Int64.of_int cli_match.start.col)
+              ~end_line:(Int64.of_int cli_match.end_.line)
+              ~end_column:(Int64.of_int cli_match.end_.col)
+              ()
+          in
+          Sarif_v.create_replacement ~deleted_region:region
+            ~inserted_content:
+              (Sarif_v.create_artifact_content
+                 ~text:(String.concat "\n" fixed_lines)
+                 ())
+            ()
+        in
+        Sarif_v.create_artifact_change ~artifact_location
+          ~replacements:[ replacement ] ()
+      in
+      Some
+        [
+          Sarif_v.create_fix
+            ~description:(Sarif_v.create_message ~text:description_text ())
+            ~artifact_changes:[ artifact_change ] ();
+        ]
 
 let sarif_location (cli_match : OutT.cli_match) message
     (location : OutT.location) content nesting_level =
@@ -259,30 +247,79 @@ let sarif_location (cli_match : OutT.cli_match) message
       ("nestingLevel", `Int nesting_level);
     ]
 
-let intermediate_var_locations cli_match intermediate_vars =
+let intermediate_var_locations (cli_match : OutT.cli_match) intermediate_vars =
   intermediate_vars
   |> List_.map (fun ({ location; content } : OutT.match_intermediate_var) ->
-         let propagation_message_text =
-           spf "Propagator : '%s' @ '%s:%d'" content
-             (Fpath.to_string location.path)
-             location.start.line
+         let propagation_message =
+           let text =
+             spf "Propagator : '%s' @ '%s:%d'" content
+               (Fpath.to_string location.path)
+               location.start.line
+           in
+           Sarif_v.create_message ~text ()
          in
-         sarif_location cli_match propagation_message_text location content 0)
+         let location =
+           let physical_location =
+             let region =
+               Sarif_v.create_region
+                 ~start_line:(Int64.of_int location.start.line)
+                 ~start_column:(Int64.of_int location.start.col)
+                 ~end_line:(Int64.of_int location.end_.line)
+                 ~end_column:(Int64.of_int location.end_.col)
+                 ~message:propagation_message
+                 ~snippet:(Sarif_v.create_artifact_content ~text:content ())
+                 ()
+             in
+             Sarif_v.create_physical_location ~region
+               ~artifact_location:
+                 (Sarif_v.create_artifact_location
+                    ~uri:(Fpath.to_string cli_match.path)
+                    ())
+               ()
+           in
+           Sarif_v.create_location ~message:propagation_message
+             ~physical_location ()
+         in
+         Sarif_v.create_thread_flow_location ~location ~nesting_level:0L ())
 
 let thread_flows (cli_match : OutT.cli_match)
     (dataflow_trace : OutT.match_dataflow_trace) (location : OutT.location)
-    content =
+    content message =
   (* TODO from sarif.py: deal with taint sink *)
   let intermediate_vars = dataflow_trace.intermediate_vars in
   ignore cli_match;
   ignore dataflow_trace;
   let thread_flow_location =
-    let source_message_text =
-      spf "Source: '%s' @ '%s:%d'" content
-        (Fpath.to_string location.path)
-        location.start.line
+    let source_message =
+      let text =
+        spf "Source: '%s' @ '%s:%d'" content
+          (Fpath.to_string location.path)
+          location.start.line
+      in
+      Sarif_v.create_message ~text ()
     in
-    sarif_location cli_match source_message_text location content 0
+    let physical_location =
+      let region =
+        Sarif_v.create_region
+          ~start_line:(Int64.of_int location.start.line)
+          ~start_column:(Int64.of_int location.start.col)
+          ~end_line:(Int64.of_int location.end_.line)
+          ~end_column:(Int64.of_int location.end_.col)
+          ~message:source_message
+          ~snippet:(Sarif_v.create_artifact_content ~text:content ())
+          ()
+      in
+      Sarif_v.create_physical_location
+        ~artifact_location:
+          (Sarif_v.create_artifact_location
+             ~uri:(Fpath.to_string cli_match.path)
+             ())
+        ~region ()
+    in
+    let location =
+      Sarif_v.create_location ~message:source_message ~physical_location ()
+    in
+    Sarif_v.create_thread_flow_location ~location ~nesting_level:0L ()
   in
   let intermediate_var_locations =
     match intermediate_vars with
@@ -291,45 +328,58 @@ let thread_flows (cli_match : OutT.cli_match)
         intermediate_var_locations cli_match intermediate_vars
   in
   let sink_flow_location =
-    let sink_message_text =
-      spf "Sink: '%s' @ '%s:%d'"
-        (String.trim cli_match.extra.lines) (* rule_match.get_lines() ?! *)
-        (Fpath.to_string cli_match.path)
-        cli_match.start.line
+    let sink_message =
+      let text =
+        spf "Sink: '%s' @ '%s:%d'"
+          (String.trim cli_match.extra.lines) (* rule_match.get_lines() ?! *)
+          (Fpath.to_string cli_match.path)
+          cli_match.start.line
+      in
+      Sarif_v.create_message ~text ()
     in
-    sarif_location cli_match sink_message_text
-      {
-        OutT.start = cli_match.start;
-        end_ = cli_match.end_;
-        path = cli_match.path;
-      }
-      cli_match.extra.lines 1
+    let location =
+      let physical_location =
+        let region =
+          Sarif_v.create_region
+            ~start_line:(Int64.of_int cli_match.start.line)
+            ~start_column:(Int64.of_int cli_match.start.col)
+            ~end_line:(Int64.of_int cli_match.end_.line)
+            ~end_column:(Int64.of_int cli_match.end_.col)
+            ~message:sink_message
+            ~snippet:
+              (Sarif_v.create_artifact_content ~text:cli_match.extra.lines ())
+            ()
+        in
+        Sarif_v.create_physical_location
+          ~artifact_location:
+            (Sarif_v.create_artifact_location
+               ~uri:(Fpath.to_string cli_match.path)
+               ())
+          ~region ()
+      in
+      Sarif_v.create_location ~physical_location ~message:sink_message ()
+    in
+    Sarif_v.create_thread_flow_location ~location ~nesting_level:1L ()
   in
   [
-    ( "threadFlows",
-      `List
-        [
-          `Assoc
-            [
-              ( "locations",
-                `List
-                  ([ thread_flow_location ] @ intermediate_var_locations
-                 @ [ sink_flow_location ]) );
-            ];
-        ] );
+    Sarif_v.create_thread_flow ~message
+      ~locations:
+        (thread_flow_location
+        :: (intermediate_var_locations @ [ sink_flow_location ]))
+      ();
   ]
 
 let sarif_codeflow (cli_match : OutT.cli_match) =
   match cli_match.extra.dataflow_trace with
   | None
   | Some { OutT.taint_source = None; _ } ->
-      []
+      None
   | Some { OutT.taint_source = Some (CliCall _); _ } ->
       Logs.err (fun m ->
           m
             "Emitting SARIF output for unsupported dataflow trace (source is a \
              call)");
-      []
+      None
   | Some
       ({ taint_source = Some (CliLoc (location, content)); _ } as dataflow_trace)
     ->
@@ -342,69 +392,49 @@ let sarif_codeflow (cli_match : OutT.cli_match) =
           cli_match.start.line
       in
       let thread_flows =
-        ignore dataflow_trace;
-        thread_flows cli_match dataflow_trace location content
+        let message = Sarif_v.create_message ~text:code_flow_message () in
+        thread_flows cli_match dataflow_trace location content message
       in
-      [
-        ( "codeFlows",
-          `List
-            [
-              `Assoc
-                ([ ("message", `Assoc [ ("text", `String code_flow_message) ]) ]
-                @ thread_flows);
-            ] );
-      ]
+      Some [ Sarif_v.create_code_flow ~thread_flows () ]
 
 let results (cli_output : OutT.cli_output) =
   let result (cli_match : OutT.cli_match) =
     let location =
-      `Assoc
-        [
-          ( "physicalLocation",
-            `Assoc
-              [
-                ( "artifactLocation",
-                  `Assoc
-                    [
-                      ("uri", `String (Fpath.to_string cli_match.path));
-                      ("uriBaseId", `String "%SRCROOT%");
-                    ] );
-                ( "region",
-                  `Assoc
-                    [
-                      ( "snippet",
-                        `Assoc [ ("text", `String cli_match.extra.lines) ] );
-                      ("startLine", `Int cli_match.start.line);
-                      ("startColumn", `Int cli_match.start.col);
-                      ("endLine", `Int cli_match.end_.line);
-                      ("endColumn", `Int cli_match.end_.col);
-                    ] );
-              ] );
-        ]
+      let physical_location =
+        let artifact_location =
+          Sarif_v.create_artifact_location
+            ~uri:(Fpath.to_string cli_match.path)
+            ~uri_base_id:"%SRCROOT%" ()
+        in
+        let region =
+          Sarif_v.create_region
+            ~snippet:
+              (Sarif_v.create_artifact_content ~text:cli_match.extra.lines ())
+            ~start_line:(Int64.of_int cli_match.start.line)
+            ~start_column:(Int64.of_int cli_match.start.col)
+            ~end_line:(Int64.of_int cli_match.end_.line)
+            ~end_column:(Int64.of_int cli_match.end_.col)
+            ()
+        in
+        Sarif_v.create_physical_location ~artifact_location ~region ()
+      in
+      Sarif_v.create_location ~physical_location ()
     in
-    let suppression =
+    let suppressions =
       match cli_match.extra.is_ignored with
       | None
       | Some false ->
-          []
-      | Some true ->
-          [
-            ("suppressions", `List [ `Assoc [ ("kind", `String "inSource") ] ]);
-          ]
+          None
+      | Some true -> Some [ Sarif_v.create_suppression ~kind:`InSource () ]
     in
     let fix = sarif_fix cli_match in
     let code_flows = sarif_codeflow cli_match in
-    `Assoc
-      ([
-         ("ruleId", `String (Rule_ID.to_string cli_match.check_id));
-         ("message", `Assoc [ ("text", `String cli_match.extra.message) ]);
-         ("locations", `List [ location ]);
-         ( "fingerprints",
-           `Assoc [ ("matchBasedId/v1", `String cli_match.extra.fingerprint) ]
-         );
-         ("properties", `Assoc []);
-       ]
-      @ suppression @ fix @ code_flows)
+    let message = Sarif_v.create_message ~text:cli_match.extra.message () in
+    Sarif_v.create_result
+      ~rule_id:(Rule_ID.to_string cli_match.check_id)
+      ~message ~locations:[ location ] ?suppressions
+      ~fingerprints:[ ("matchBasedId/v1", cli_match.extra.fingerprint) ]
+      ~properties:[] ?fixes:fix ?code_flows ()
   in
   List_.map result cli_output.results
 
@@ -418,13 +448,12 @@ let error_to_sarif_notification (e : OutT.cli_error) =
            e.long_msg)
       e.message
   in
-  let descriptor = Error.string_of_error_type e.type_ in
-  `Assoc
-    [
-      ("descriptor", `Assoc [ ("id", `String descriptor) ]);
-      ("message", `Assoc [ ("text", `String message) ]);
-      ("level", `String level);
-    ]
+  let message = Sarif_v.create_message ~text:message () in
+  let descriptor =
+    let id = Error.string_of_error_type e.type_ in
+    Sarif_v.create_reporting_descriptor_reference ~id ()
+  in
+  Sarif_v.create_notification ~descriptor ~message ~level ()
 
 let sarif_output hrules (cli_output : OutT.cli_output) =
   let sarif_schema =
@@ -444,16 +473,12 @@ let sarif_output hrules (cli_output : OutT.cli_output) =
     in
     let rules = rules hide_nudge hrules in
     let tool =
-      `Assoc
-        [
-          ( "driver",
-            `Assoc
-              [
-                ("name", `String (spf "Semgrep %s" engine_label));
-                ("semanticVersion", `String Version.version);
-                ("rules", `List rules);
-              ] );
-        ]
+      let driver =
+        Sarif_v.create_tool_component ~semantic_version:Version.version ~rules
+          ~name:(spf "Semgrep %s" engine_label)
+          ()
+      in
+      Sarif_v.create_tool ~driver ()
     in
     let results = results cli_output in
     let invocation =
@@ -461,22 +486,10 @@ let sarif_output hrules (cli_output : OutT.cli_output) =
       let exec_notifs =
         List_.map error_to_sarif_notification cli_output.errors
       in
-      `Assoc
-        [
-          ("executionSuccessful", `Bool true);
-          ("toolExecutionNotifications", `List exec_notifs);
-        ]
+      Sarif_v.create_invocation ~execution_successful:true
+        ~tool_execution_notifications:exec_notifs ()
     in
-    `Assoc
-      [
-        ("tool", tool);
-        ("results", `List results);
-        ("invocations", `List [ invocation ]);
-      ]
+    Sarif_v.create_run ~tool ~results ~invocations:[ invocation ] ()
   in
-  `Assoc
-    [
-      ("version", `String "2.1.0");
-      ("$schema", `String sarif_schema);
-      ("runs", `List [ run ]);
-    ]
+  Sarif_v.create_sarif_json_schema ~version:`TwoDotOneDotZero
+    ~schema:sarif_schema ~runs:[ run ] ()

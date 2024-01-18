@@ -449,6 +449,7 @@ For more information see https://semgrep.dev
     (yojson ( >= 2.0.0 ))
     yaml
     xmlm
+    sarif
     ; CLI
     cmdliner
     ; PPX
