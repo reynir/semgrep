@@ -96,10 +96,8 @@ let rules hide_nudge (hrules : Rule.hrules) =
         let properties =
           let tags = tags_of_metadata metadata in
           [
-            ("precision", (*`String*) "very-high");
-            ( "tags",
-              (*FIXME: `List (List_.map (fun s -> `String s) tags));*)
-              String.concat "," tags );
+            ("precision", `String "very-high");
+            ("tags", `List (List_.map (fun s -> `String s) tags));
           ]
           @ security_severity
         in
