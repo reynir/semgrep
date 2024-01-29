@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "f0a731b38fb924b061ba6a09f17cdab4df9f3aeb11f83c57bf747bf1db5144c74005b83b5969fe7006107556b26779315ef51e3218c2d42b8a1d24e5458362a3_0",
         "is_ignored": false,
         "lines": "      \"source\": [",
         "message": "check for data",
@@ -41,7 +41,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "e2b6f9aa84ba2e0601a4de538bb03d6a61de3b1706af29ee3f26db17c780de9c647b697f54fd5caa6351368a0878d1c940aadcc1a731b1ad7c6ffcfeb9648845_0",
         "is_ignored": false,
         "lines": "       \"    pickle.dump(data, f)\"",
         "message": "found pickle",
@@ -66,7 +66,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "dd6811ff8f0d031e42d4cd57affade64748a2322832a1e6313c40b380a384d717e28eef655d5069f9ae65c6475ec8fd2db7755d43b083ae3d279244e1a30fbb9_0",
         "is_ignored": false,
         "lines": "      \"outputs\": [],",
         "message": "left `test123` in the code",

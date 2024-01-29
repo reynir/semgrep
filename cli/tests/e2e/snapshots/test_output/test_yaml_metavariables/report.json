@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "b4b3bf0e4a42bd90290c83499ee4f0965024479f4dfd73de0ad1d9e29a427db19e698f83e6cd30ddabd9dde3357bc5d13e565f74f74b7660ee63ea454162f360_0",
         "is_ignored": false,
         "lines": "- key: \"one\"",
         "message": "\"one\"\n",
@@ -55,7 +55,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d642139b01d67bfa4d32f8f1553769cfa61b9be16f7df90361b089e751f38ad2a4277268b4b671df4499aa367812d5f851be79a04ba982a43e98a547cecc83f0_0",
         "is_ignored": false,
         "lines": "- key: 'two'",
         "message": "'two'\n",
@@ -94,7 +94,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "98c6e096cf35dd23bf794cf876fec248d6939b0078996d607e1a48ea21587343bb43e673e0b2e16009469b31db12255886de64ac48495d6c8ac2ef1ca2d6bb58_0",
         "is_ignored": false,
         "lines": "- key: |\n    three",
         "message": "\n    three\n\n",
@@ -133,7 +133,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "ec9949545974a58b8d149807e08f5e3aa743b8bcbc4f7e072f77a19b80e9f8ca0877f70af729ccd81791d65f2e3489b2a713c65b0ccaea0a0215e74b47cc6ec8_0",
         "is_ignored": false,
         "lines": "- key: |\n   four",
         "message": "\n   four\n\n",
@@ -172,7 +172,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "6c808593ae892cc16ac1334521c29279768067ab0d83a4812cb90ba082ed1af632faef6e9a7ed7eed2ae27ad02d96ba932d0a6f31270aa5571ac4c34de331458_0",
         "is_ignored": false,
         "lines": "- key: |       \n    fi\n\n    ve",
         "message": "       \n    fi\n\n    ve\n\n",
@@ -211,7 +211,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "4e471a37067accb882e8bb5b9ea6c08cb8321a10f9c67950bd8f28bacbc7a85bc3528c7451a8b90330a7d5e8e699411b7f4945540fb6c217c0bc792f33aa4b37_0",
         "is_ignored": false,
         "lines": "- key: |\n    si\n\n      x",
         "message": "\n    si\n\n      x\n    \n\n",
@@ -250,7 +250,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "104c9565f8e6e06e98b66ba8d40d1d41aa4581b26c3345336ab246048dd8e582884ef87eec2b128127b8d624ff70e4458a5b96331fc166540bf44c9278f0284b_0",
         "is_ignored": false,
         "lines": "- key: >\n    seven",
         "message": "\n    seven\n\n",
@@ -289,7 +289,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "9061681ce32aaac107aacf80048a78c468c54eb3e0c734f83c4cb6e4c1a5e90bf00fa25d49214da2ff0a17babfe542ba5b8774f5406eb70271d4cc1f75c930c1_0",
         "is_ignored": false,
         "lines": "- key: >\n    eig\n\n    ht",
         "message": "\n    eig\n\n    ht\n",

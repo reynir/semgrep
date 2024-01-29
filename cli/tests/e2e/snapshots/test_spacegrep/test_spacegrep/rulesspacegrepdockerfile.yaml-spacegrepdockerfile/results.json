@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "e956ecc4acc4ff2d61b1cfccaaca4e56cf0c6249d0edfb05aee382c191a7329d716e1905c72eab493c9e4f90c822b184e0b0cb5539ee828cca3f1aee93844b0c_0",
         "is_ignored": false,
         "lines": "USER root",
         "message": "'USER' is specified twice\n",
@@ -55,7 +55,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "e956ecc4acc4ff2d61b1cfccaaca4e56cf0c6249d0edfb05aee382c191a7329d716e1905c72eab493c9e4f90c822b184e0b0cb5539ee828cca3f1aee93844b0c_1",
         "is_ignored": false,
         "lines": "USER root",
         "message": "'USER' is specified twice\n",

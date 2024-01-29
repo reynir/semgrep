@@ -25,7 +25,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d80fa5ecb6d0abb816bb2a7d4edd946860fdf65a082ef14087d08a486abe7e479481838e3370aded405544876cb031864a90733b99ba90ccdc56ffb4d4b5423f_0",
         "is_ignored": false,
         "lines": "        \"System.Text.Encoding.CodePages\": {",
         "message": "Usage of CodePagesEncodingProvider.Instance detected",
@@ -70,7 +70,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "33cdca091a23914db04185643a03682cb59ba42955f019f460e2e4ba8c2486827554c2d5502973f788acf37dad6a45d2e17a684b383e4744ebce13d4e328c68f_0",
         "is_ignored": false,
         "lines": "        \"System.Runtime.CompilerServices.Unsafe\": {",
         "message": "let's assume System.Linq.Expressions has a vulnerability",
@@ -115,7 +115,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d80fa5ecb6d0abb816bb2a7d4edd946860fdf65a082ef14087d08a486abe7e479481838e3370aded405544876cb031864a90733b99ba90ccdc56ffb4d4b5423f_0",
         "is_ignored": false,
         "lines": "        \"System.Text.Encoding.CodePages\": {",
         "message": "Usage of CodePagesEncodingProvider.Instance detected",
@@ -160,7 +160,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "33cdca091a23914db04185643a03682cb59ba42955f019f460e2e4ba8c2486827554c2d5502973f788acf37dad6a45d2e17a684b383e4744ebce13d4e328c68f_0",
         "is_ignored": false,
         "lines": "        \"System.Runtime.CompilerServices.Unsafe\": {",
         "message": "let's assume System.Linq.Expressions has a vulnerability",
@@ -205,7 +205,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d80fa5ecb6d0abb816bb2a7d4edd946860fdf65a082ef14087d08a486abe7e479481838e3370aded405544876cb031864a90733b99ba90ccdc56ffb4d4b5423f_0",
         "is_ignored": false,
         "lines": "        \"System.Text.Encoding.CodePages\": {",
         "message": "Usage of CodePagesEncodingProvider.Instance detected",
@@ -250,7 +250,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "33cdca091a23914db04185643a03682cb59ba42955f019f460e2e4ba8c2486827554c2d5502973f788acf37dad6a45d2e17a684b383e4744ebce13d4e328c68f_0",
         "is_ignored": false,
         "lines": "        \"System.Runtime.CompilerServices.Unsafe\": {",
         "message": "let's assume System.Linq.Expressions has a vulnerability",

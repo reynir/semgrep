@@ -156,7 +156,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "af4a2a5dda96a4138a956a94eade6bd51759108ef6451b532f1e942955058c7b7e23771ca0727c077bd691b202115935c5375b0b4bd84b8a3b586f310a621380_0",
         "is_ignored": false,
         "lines": "console.log(x == x)",
         "message": "useless comparison",

@@ -262,7 +262,7 @@ ALWAYS_MASK: Maskers = (
 
 
 def mask_variable_text(
-    text: str, mask: Optional[Maskers] = None, clean_fingerprint: bool = True
+    text: str, mask: Optional[Maskers] = None, clean_fingerprint: bool = False
 ) -> str:
     if mask is None:
         mask = []
@@ -372,7 +372,7 @@ def _run_semgrep(
     assume_targets_dir: bool = True,  # See e2e/test_dependency_aware_rule.py for why this is here
     force_metrics_off: bool = True,
     stdin: Optional[str] = None,
-    clean_fingerprint: bool = True,
+    clean_fingerprint: bool = False,
     use_click_runner: bool = False,  # Deprecated! see semgrep_runner.py toplevel comment
 ) -> SemgrepResult:
     """Run the semgrep CLI.

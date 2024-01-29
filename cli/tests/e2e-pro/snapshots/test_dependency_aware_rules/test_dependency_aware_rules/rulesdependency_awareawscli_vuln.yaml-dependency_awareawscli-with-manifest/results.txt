@@ -26,7 +26,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "179f1a6ad6e95012bff2ab997f2aa1f21a97aeaebf7d130e00b0348c9e4ab9ad427cb6bcf91c3bf26fb9d9b05e23ec71e375936f46b625c893d9458a79e534d1_0",
         "is_ignored": false,
         "lines": "    \"awscli\": {",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 2",
@@ -76,7 +76,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "8859360a8f65b0c1dfb344709a0729f2422d4b5a862a0cd2e9b55f02530b6dfe1d436c652e40d8c912d5271d5764359d05957d6ce3ce0d089fe6d49ae03c2395_0",
         "is_ignored": false,
         "lines": "    \"awscli\": {",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 1",
@@ -126,7 +126,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "baea1196b1f95202d7172af67c7a00a22f47e5239d652b5f3755fe138870f7c4cec1ae9f493f0bf6b7b5fab99ebdb2488ecccd44393ddb7116aaa6427c770b94_0",
         "is_ignored": false,
         "lines": "            s3_client = boto3.client(\"s3\")",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 3",
@@ -177,7 +177,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "0e1e58ae0045075e2ecdd39a01f1443af243b319aeb280a886c590735ee27218a31aef6cbd41e6540c327b2e6328a61f6adba80327d0ad10c9504e7dbca83811_0",
         "is_ignored": false,
         "lines": "            s3_client = boto3.client(\"s3\")",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 1",
@@ -228,7 +228,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "bade8424296845438f729674b3ac51b71f39f0ceb0438940fba90fa4dc286f4810b9e272b52723a969ec4f1e0a7293b1f70b2bef7e355c0b57e611b1cc0f612a_0",
         "is_ignored": false,
         "lines": "            s3_client = boto3.client(\"s3\")",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 1",
@@ -279,7 +279,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "baea1196b1f95202d7172af67c7a00a22f47e5239d652b5f3755fe138870f7c4cec1ae9f493f0bf6b7b5fab99ebdb2488ecccd44393ddb7116aaa6427c770b94_1",
         "is_ignored": false,
         "lines": "            s3_client = boto3.client(\"s3\", region_name=region)",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 3",
@@ -330,7 +330,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "0e1e58ae0045075e2ecdd39a01f1443af243b319aeb280a886c590735ee27218a31aef6cbd41e6540c327b2e6328a61f6adba80327d0ad10c9504e7dbca83811_1",
         "is_ignored": false,
         "lines": "            s3_client = boto3.client(\"s3\", region_name=region)",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 1",
@@ -381,7 +381,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "bade8424296845438f729674b3ac51b71f39f0ceb0438940fba90fa4dc286f4810b9e272b52723a969ec4f1e0a7293b1f70b2bef7e355c0b57e611b1cc0f612a_1",
         "is_ignored": false,
         "lines": "            s3_client = boto3.client(\"s3\", region_name=region)",
         "message": "this version of awscli is subject to a directory traversal vulnerability in the s3 module 1",

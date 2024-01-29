@@ -39,6 +39,7 @@ def test_file_not_relative_to_base_path(run_semgrep: RunSemgrep, snapshot):
         options=["--json", "-e", "a", "--lang", "js", "-"],
         stdin="a",
         use_click_runner=True,  # TODO: probably because of stdin?
+        clean_fingerprint = True,
     )
     results.raw_stdout = mask_variable_text(results.raw_stdout)
     snapshot.assert_match(results.as_snapshot(), "results.txt")

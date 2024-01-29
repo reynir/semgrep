@@ -26,7 +26,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "395ad9dcc0e2c68cbccaf151483be2424331634c7d6dcaee99d007870c32270169a63a720e14ad2227da02806facb937cb193fd51e4d4913c96eb207b601cab0_0",
         "is_ignored": false,
         "lines": "let x = bad();",
         "message": "oh no",

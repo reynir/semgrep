@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "1ccfdeae9247f2f32c35443f3bf87d4fd67e4d58b25adfcdb7dd5fc74079c09713a2e45e39f1f46e12361f98aa492bfba2a4983d4e9f409c02dfcff1ba254f20_1",
         "is_ignored": false,
         "lines": "aws_account_id:123456789012",
         "message": "AWS Account ID detected",

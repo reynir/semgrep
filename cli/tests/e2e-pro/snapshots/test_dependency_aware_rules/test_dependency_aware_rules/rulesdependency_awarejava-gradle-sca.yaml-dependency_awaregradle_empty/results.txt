@@ -25,7 +25,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "fc1ae428b9c1fcb746087fc39eabe05ffa18311a7e2de3b366d6897e72564a5c58aa3b10074cc6c7fa135e2b0cc5e9fb441052804a8024917efe82f3242cab10_0",
         "is_ignored": false,
         "lines": "org.webjars.npm:swagger-ui-dist:3.35.2=productionRuntimeClasspath,runtimeClasspath,testRuntimeClasspath",
         "message": "oh no",

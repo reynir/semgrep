@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "8e894ab1c98efacae02f877cbc26c84ac916111951ee659223969ff327d63394598ca1019ec3363c3b5f945d4b64cd769f2202dd369ac994b284b9f77d4a512e_0",
         "is_ignored": false,
         "lines": "begin find me end",
         "message": "found something",
@@ -41,7 +41,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "8e894ab1c98efacae02f877cbc26c84ac916111951ee659223969ff327d63394598ca1019ec3363c3b5f945d4b64cd769f2202dd369ac994b284b9f77d4a512e_1",
         "is_ignored": false,
         "lines": "begin\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nend",
         "message": "found something",

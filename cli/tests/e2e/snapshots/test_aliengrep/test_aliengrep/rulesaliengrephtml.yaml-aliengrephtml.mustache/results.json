@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d490badfe8242a5fc62026d0611ac7cec669763231796e5fbf9551f6efba52b6ee25e942873569930289d8ed5d7d27a3d789823e04b66cbaa2aeb9c8d68e0a87_0",
         "is_ignored": false,
         "lines": "    var message = {{ message }};",
         "message": "Detected template variable in script tag. This is dangerous because\nHTML escaping does not prevent injection in script contexts.\n",
@@ -41,7 +41,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d490badfe8242a5fc62026d0611ac7cec669763231796e5fbf9551f6efba52b6ee25e942873569930289d8ed5d7d27a3d789823e04b66cbaa2aeb9c8d68e0a87_1",
         "is_ignored": false,
         "lines": "    var message = {{ message }};",
         "message": "Detected template variable in script tag. This is dangerous because\nHTML escaping does not prevent injection in script contexts.\n",
@@ -66,7 +66,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "d490badfe8242a5fc62026d0611ac7cec669763231796e5fbf9551f6efba52b6ee25e942873569930289d8ed5d7d27a3d789823e04b66cbaa2aeb9c8d68e0a87_2",
         "is_ignored": false,
         "lines": "    var message2 = {{ message2 }};",
         "message": "Detected template variable in script tag. This is dangerous because\nHTML escaping does not prevent injection in script contexts.\n",

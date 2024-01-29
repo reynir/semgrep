@@ -29,7 +29,7 @@ class RunSemgrep(Protocol):
         assume_targets_dir: bool = True,
         force_metrics_off: bool = True,
         stdin: str | None = None,
-        clean_fingerprint: bool = True,
+        clean_fingerprint: bool = False,
         use_click_runner: bool = False,
     ) -> SemgrepResult:
         ...

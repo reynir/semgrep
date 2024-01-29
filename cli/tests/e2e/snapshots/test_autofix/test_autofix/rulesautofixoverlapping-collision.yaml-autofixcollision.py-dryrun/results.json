@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "c351ef81a713f28f2d1ea4754e10b3980b6b19da00a473966753729981baf14c71d1ee66902a400e3011c683ec16fa53a34740ba7997d68a8caeb1ab80700cf8_0",
         "fix": "once",
         "fixed_lines": [
           "once"
@@ -72,7 +72,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "e44be0ade32b0ca2551e4c5c589c058d6be2a2b4cd2ec2775b6c9dddaaf186368d205c855a4f42bfe15c1fb3ad9e076d8ce233aecea68c1073a255c9693a7e09_0",
         "fix": "twice",
         "is_ignored": false,
         "lines": "b = 2\nc = 3\nd = 4",

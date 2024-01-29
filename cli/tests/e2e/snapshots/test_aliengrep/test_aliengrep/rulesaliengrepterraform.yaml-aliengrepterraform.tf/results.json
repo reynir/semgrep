@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0x42",
+        "fingerprint": "af8a52c906da06b15f8fb9b52d6cec0706f52e9209cb08029e719d3bd67e0c6082224f5bc632bc21f2b858c5a4f1b63beaac966ad8280781a35297efab9912ce_0",
         "is_ignored": false,
         "lines": "    allowed_origins = [\"*\"]",
         "message": "CORS rule on bucket permits any origin",
