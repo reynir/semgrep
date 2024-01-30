@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "819d2aa43a67331c703b584402034fa41ad213958ab8f68c3b4141a29e89274cfb1e99e88e6e9915e8ee4c18d23debcc81720a0d00bea078286ef386a6763bf5_0",
+        "fingerprint": "('new DefaultHttpClient(...);', PosixPath('targets/autofix/defaulthttpclient.java'), 'rules.autofix.java.lang.security.audit.crypto.ssl.defaulthttpclient-is-deprecated.defaulthttpclient-is-deprecated')_0",
         "fix": "HttpClient client = new SystemDefaultHttpClient()",
         "is_ignored": false,
         "lines": "\t\tHttpClient client = new DefaultHttpClient();",

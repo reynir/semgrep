@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "102644351e8c4b501b909214f90471b355622b0d9ab2abce833c4b88c20d7a02c2f195493b7ee573a071be444f422a165b508e863f619b3bd26731d46687b399_0",
+        "fingerprint": "('HTTP/1.1 200 OK\\n...\\n content-type: text/html', PosixPath('targets/aliengrep/httpresponse.txt'), 'rules.aliengrep.content-type-text-html')_0",
         "is_ignored": false,
         "lines": "Content-Type: text/html",
         "message": "Detected text/html",

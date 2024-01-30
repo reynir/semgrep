@@ -26,7 +26,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "9491da47da2d68d9ff38a553cdd0d07339592cfe5958f6af4cf469f3a9d86dfbde37567d5451ae6f83a41319c48aed0140364a2e5b1462b280c6d0540bb3a51b_0",
+        "fingerprint": "('a+b == a+b', PosixPath('targets/basic/stupid.py'), 'eqeq-is-bad')_0",
         "is_ignored": false,
         "lines": "    return a + b == a + b",
         "message": "a + b == a + b is a useless equality check",
@@ -65,7 +65,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "db9a0d9817e921bcdb001e9b19b33cb7453fe1bbec4ccd4e8a0bd03410c7a1e122fad9cd36a6f377666e53e318e3ad80282138a9dff87cff6943a197b0f0f6c0_0",
+        "fingerprint": "('x == x', PosixPath('targets/basic/stupid.py'), 'eqeq-is-bad')_0",
         "is_ignored": false,
         "lines": "    x == x",
         "message": "x == x is a useless equality check",
@@ -104,7 +104,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "db9a0d9817e921bcdb001e9b19b33cb7453fe1bbec4ccd4e8a0bd03410c7a1e122fad9cd36a6f377666e53e318e3ad80282138a9dff87cff6943a197b0f0f6c0_1",
+        "fingerprint": "('x == x', PosixPath('targets/basic/stupid.py'), 'eqeq-is-bad')_1",
         "is_ignored": false,
         "lines": "assertTrue(x == x)",
         "message": "x == x is a useless equality check",

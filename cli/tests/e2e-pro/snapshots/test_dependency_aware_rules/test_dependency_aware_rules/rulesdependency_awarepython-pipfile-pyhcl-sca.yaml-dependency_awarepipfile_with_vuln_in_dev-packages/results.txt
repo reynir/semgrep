@@ -26,7 +26,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "56b80d46ce7fcb50eef6381b68a64ae98ea3f6a05c9ea35903d586bd942a4017666091cd9e50005855ea1f1af403da7be73803cef76c82443d54b172d95650b5_0",
+        "fingerprint": "('', PosixPath('targets/dependency_aware/pipfile_with_vuln_in_dev-packages/Pipfile.lock'), 'rules.dependency_aware.python-pipfile-pyhcl-sca')_0",
         "is_ignored": false,
         "lines": "        \"pyhcl\": {",
         "message": "oh no",

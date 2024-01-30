@@ -48,7 +48,7 @@ Creating git worktree from '<MASKED>' to scan baseline.
 
 
 ┌──────────────────────────┐
-│ 6 Blocking Code Findings │
+│ 7 Blocking Code Findings │
 └──────────────────────────┘
 
     foo.py
@@ -67,6 +67,11 @@ Creating git worktree from '<MASKED>' to scan baseline.
           useless comparison to 4
 
            19┆ baz == 4
+
+   ❯❯❱ eqeq-bad
+          useless comparison
+
+           23┆ b == b # Triage ignored by syntactic_id
 
     ❯❱ taint-test
           unsafe use of danger
@@ -99,7 +104,7 @@ Some files were skipped or only partially analyzed.
   Scan was limited to files changed since baseline commit.
 
 CI scan completed successfully.
-  Found 7 findings (6 blocking) from 7 rules.
+  Found 8 findings (7 blocking) from 7 rules.
   Uploading scan results
   Finalizing scan           View results in Semgrep Cloud Platform:
     https://semgrep.dev/orgs/org_name/findings

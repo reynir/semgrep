@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "ba2d217c7632e97b1b42c364a5f8f42d5c922618be87490c31b55fd0066bc15c16cda322e70eabca4b0518f8f5ee1572c507329ca233823bdc5271bd8a81f436_0",
+        "fingerprint": "('y:\\n  foo: true\\n', PosixPath('targets/autofix/yaml-excessive-mapping-capture.yaml'), 'rules.autofix.yaml-excessive-capture')_0",
         "fix": "y: false",
         "fixed_lines": [
           "  y: false"

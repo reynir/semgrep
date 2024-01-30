@@ -11,7 +11,7 @@
       "results": [
         {
           "fingerprints": {
-            "matchBasedId/v1": "1fa894f43c4fd60b1b0c5e2e9a50311b67b77a7b09f7c45001277b41e41accd87cd8e2931d57e0bf41a0e5086501be1fea611473dd02e1625c49204145464dba_0"
+            "matchBasedId/v1": "('a+b == a+b', PosixPath('targets/basic/stupid.py'), 'rules.rule-board-eqeq-five')_0"
           },
           "locations": [
             {
@@ -40,7 +40,7 @@
         },
         {
           "fingerprints": {
-            "matchBasedId/v1": "79990521677dc96cec634491f9134e8528b49257440a27b8df47582e37668aaf5cb3343fe53b19476b12071b84f58db799c9f7f3d75b09dd3547f283b7036d38_0"
+            "matchBasedId/v1": "('x == x', PosixPath('targets/basic/stupid.py'), 'rules.rule-board-eqeq-five')_0"
           },
           "locations": [
             {
@@ -69,7 +69,7 @@
         },
         {
           "fingerprints": {
-            "matchBasedId/v1": "79990521677dc96cec634491f9134e8528b49257440a27b8df47582e37668aaf5cb3343fe53b19476b12071b84f58db799c9f7f3d75b09dd3547f283b7036d38_1"
+            "matchBasedId/v1": "('x == x', PosixPath('targets/basic/stupid.py'), 'rules.rule-board-eqeq-five')_1"
           },
           "locations": [
             {

@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "52058caf3f1a443e6baa9336c841d378f7a70bf9ae99de911627661cb41108ef857412c92d23f80603fd235ddb1989dee8a39be9888b57c5279cf3d6d92b8ff5_0",
+        "fingerprint": "('SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK != SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK == SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK def __init__(...):\\n    ...\\n self.SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK == self.SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK 1 == 1 assert(...) assertFalse(...) assertTrue(...) def __eq__(...):\\n    ...\\n', PosixPath('targets/multiline/stupid.py'), 'rules.eqeq-is-bad')_0",
         "is_ignored": false,
         "lines": "    return (\n        SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK\n        == SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK\n    )",
         "message": "useless comparison operation `SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK == SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK` or `SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK != SUPER_LONG_CONSTANT_TO_TRIGGER_A_LINE_BREAK`; possible bug?",
@@ -70,7 +70,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "9d1118226495e3021eba55e101363e71d9c9f13e15ea40d11864a747896a602c3e62e3ddae1bd8fc1100668730628116751075c5ccc20f774d3bbe1641fde13f_0",
+        "fingerprint": "('x = \"\"\"\\n    abc\\n    def\\n\"\"\"', PosixPath('targets/multiline/stupid.py'), 'rules.assign-multiline-comment')_0",
         "is_ignored": false,
         "lines": "x = \"\"\"\n    abc\n    def\n\"\"\"",
         "message": "found an assignment of a multiline comment",

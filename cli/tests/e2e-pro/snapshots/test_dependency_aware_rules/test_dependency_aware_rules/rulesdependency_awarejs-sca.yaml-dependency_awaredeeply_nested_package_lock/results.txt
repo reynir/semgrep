@@ -25,7 +25,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "81540252cdda83bd02832913cc49d186a5eabfa41a235eb162302bbc7a2c42d48080360b01df0b836df715bc6732a5b78c5b2e58869e71505ab50435f5423e0b_0",
+        "fingerprint": "('', PosixPath('targets/dependency_aware/deeply_nested_package_lock/package-lock.json'), 'rules.dependency_aware.js-sca')_0",
         "is_ignored": false,
         "lines": "                                                                                        \"@types/jquery\": {",
         "message": "oh no",

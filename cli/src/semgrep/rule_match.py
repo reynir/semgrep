@@ -376,7 +376,7 @@ class RuleMatch:
     def get_match_based_id(self) -> str:
         match_id = self.get_match_based_key()
         match_id_str = str(match_id)
-        return f"{hashlib.blake2b(str.encode(match_id_str)).hexdigest()}_{str(self.match_based_index)}"
+        return f"{match_id_str}_{self.match_based_index}"
 
     @code_hash.default
     def get_code_hash(self) -> str:

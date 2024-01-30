@@ -14,7 +14,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "4e4c6c31afca48b4893de3e217e8a6636fcc832225f2c7d35dbfa65d7fd4b67b78f16bedc31436ad19a5de3dfeeab80d3b4674d2eee480bd08d6e9ed5fe362f6_0",
+        "fingerprint": "('                $ $ $ $ $ $...EXPR  person_name_full rules/join_rules/rule_parts/any-template-var.yaml template-vars rules/join_rules/rule_parts/flask-user-input.yaml user-input rules/join_rules/rule_parts/unescaped-template-extension.yaml unescaped-extensions unescaped-extensions.$PATH ~ template-vars.path unescaped-extensions. person_name_full == template-vars. person_name_full user-input. person_name_full == unescaped-extensions.$VALUE - - - - - - . . . . . . = = = = A A A A A E H L P R R R T U V V V V a a a a a a a a c c c d d d e e e e e e e e e e e e e e e e e h i i i i l l m m n n n n n n n n n n o o o p p p p p p p r r r s s s s s s s s s s s s t t t t t t t t t u u u u u v v x x x ~', PosixPath('targets/join_rules/user-input-with-unescaped-extension/launch.htm.j2'), 'rules.join_rules.user-input-with-unescaped-extension')_0",
         "is_ignored": false,
         "lines": "        <li>person_name_full is <b>{{ person_name_full }}</b></li>",
         "message": "The variable '$VAR' is most likely an XSS. This variable originates from user input and is rendered in an unescaped manner. An attacker could control this variable and input scripts onto rendered pages, resulting in all manner of bad juju. The best fix is to make sure your template extensions end in '.html', which automatically escapes rendered variables.",

@@ -26,7 +26,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "6da0742e3dab262292b21bbace19806319427e517addf5ea765a635cbc89053b53b4c7d97a320b5fdb8e99f76a208a8990b5cc3bbb340a9c9daff4d4ab67ebe3_0",
+        "fingerprint": "('bad()', PosixPath('targets/dependency_aware/requirements_with_uppercase_package_name/foo.py'), 'rules.dependency_aware.python-requirements-sca')_0",
         "is_ignored": false,
         "lines": "bad()",
         "message": "oh no",

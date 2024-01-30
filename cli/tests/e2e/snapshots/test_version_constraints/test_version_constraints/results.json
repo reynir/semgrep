@@ -137,7 +137,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "04ee39d561e144a47f50385f5e1e0ef55a40edb9bcf01c22802f80c82b6cd913b5b21e55c9e5a4cb2ae6023e9e0b22d83bae639fe7c014b2f512ce06eaf1458c_0",
+        "fingerprint": "('x', PosixPath('targets/version-constraints/x.py'), 'rules.any-version')_0",
         "is_ignored": false,
         "lines": "x = \"hello\"",
         "message": "This rule was successfully applied.",
@@ -162,7 +162,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "af9fe2665fe6e264a00bcce22223b2ff73709f9349ebe36b3feeb72229a21302acded845adb522b1d115dfae0f7ea16caa8ac15158d9f1124b6c964916c6e45a_0",
+        "fingerprint": "('x', PosixPath('targets/version-constraints/x.py'), 'rules.compatible-version-range')_0",
         "is_ignored": false,
         "lines": "x = \"hello\"",
         "message": "This rule was successfully applied.",

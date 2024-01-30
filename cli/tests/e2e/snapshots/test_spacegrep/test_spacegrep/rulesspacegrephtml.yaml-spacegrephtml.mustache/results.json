@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "7dd4b7649d53c39cd9f8e46df6ed112b046f4fb72e5fd461075f5d9d4260043acad00cf2de9ac9bf8859b20ea316e834693bcea10f612d520c7928f86b40174f_0",
+        "fingerprint": "('<script ...> ... </script> {{ ... }}', PosixPath('targets/spacegrep/html.mustache'), 'rules.spacegrep.var-in-script-tag')_0",
         "is_ignored": false,
         "lines": "    var message = {{ message }};",
         "message": "Detected template variable in script tag. This is dangerous because\nHTML escaping does not prevent injection in script contexts.\n",
@@ -41,7 +41,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "7dd4b7649d53c39cd9f8e46df6ed112b046f4fb72e5fd461075f5d9d4260043acad00cf2de9ac9bf8859b20ea316e834693bcea10f612d520c7928f86b40174f_1",
+        "fingerprint": "('<script ...> ... </script> {{ ... }}', PosixPath('targets/spacegrep/html.mustache'), 'rules.spacegrep.var-in-script-tag')_1",
         "is_ignored": false,
         "lines": "    var message = {{ message }};",
         "message": "Detected template variable in script tag. This is dangerous because\nHTML escaping does not prevent injection in script contexts.\n",
@@ -66,7 +66,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "7dd4b7649d53c39cd9f8e46df6ed112b046f4fb72e5fd461075f5d9d4260043acad00cf2de9ac9bf8859b20ea316e834693bcea10f612d520c7928f86b40174f_2",
+        "fingerprint": "('<script ...> ... </script> {{ ... }}', PosixPath('targets/spacegrep/html.mustache'), 'rules.spacegrep.var-in-script-tag')_2",
         "is_ignored": false,
         "lines": "    var message2 = {{ message2 }};",
         "message": "Detected template variable in script tag. This is dangerous because\nHTML escaping does not prevent injection in script contexts.\n",

@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "956a63e00ca2c8e28fb6c8f7409bbcb51b07b3e6d6a0226b174ee86af4f0dece02e6dbc165ec07742903d11b3e64f940d69df191c114b297abd67c9b88684f0c_0",
+        "fingerprint": "('x == x\\n class A(...):\\n  ...\\n', PosixPath('targets/message_interpolation/propagated_constant.py'), 'rules.message_interpolation.test_rule_id')_0",
         "is_ignored": false,
         "lines": "       return x == 0",
         "message": "equal comparison of x (0) in A",
@@ -81,7 +81,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "fa6a721fefcc5057147e4230b5377e8cb97136a1aff8c169ca63c3dd74e0553b1199b832c978bc01874c4f65848ce44a34bcdb954eea256d4bc599754fccec6d_0",
+        "fingerprint": "('0 == 0\\n class A(...):\\n  ...\\n', PosixPath('targets/message_interpolation/propagated_constant.py'), 'rules.message_interpolation.test_rule_id')_0",
         "is_ignored": false,
         "lines": "       return 0 == 0",
         "message": "equal comparison of 0 (0) in A",

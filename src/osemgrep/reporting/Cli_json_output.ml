@@ -312,8 +312,7 @@ let match_based_id_partial (rule : Rule.t) (rule_id : Rule_ID.t) metavars path :
     spf "('%s', PosixPath('%s'), '%s')" xpat_str_interp path
       (Rule_ID.to_string rule_id)
   in
-  let hash = Digestif.BLAKE2B.digest_string string |> Digestif.BLAKE2B.to_hex in
-  hash
+  string
 
 let make_fixed_lines ?applied_fixes lines fix path (start : OutJ.position)
     (end_ : OutJ.position) =

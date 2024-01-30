@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "35f92d0c722cb740b90ff5f1eba72f67d53a1cd7aff7f880fdc44b53c244d237d962615436c8d32083c7289ccbf9aeb99a19ee77c8d7be3f8d76cf7dd5fb8a75_0",
+        "fingerprint": "('@app.route(...)\\ndef user():\\n  ...\\n json.dumps(...)', PosixPath('targets/autofix/flask-use-jsonify.py'), 'rules.autofix.python.flask.best-practice.use-jsonify.use-jsonify')_0",
         "fix": "flask.jsonify(user_dict)",
         "is_ignored": false,
         "lines": "    return json.dumps(user_dict)",
@@ -56,7 +56,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "35f92d0c722cb740b90ff5f1eba72f67d53a1cd7aff7f880fdc44b53c244d237d962615436c8d32083c7289ccbf9aeb99a19ee77c8d7be3f8d76cf7dd5fb8a75_1",
+        "fingerprint": "('@app.route(...)\\ndef user():\\n  ...\\n json.dumps(...)', PosixPath('targets/autofix/flask-use-jsonify.py'), 'rules.autofix.python.flask.best-practice.use-jsonify.use-jsonify')_1",
         "fix": "flask.jsonify(user_dict)",
         "is_ignored": false,
         "lines": "    return dumps(user_dict)",

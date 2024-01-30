@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "f90e15c6343285c31dc7788f51d23143ad10f437db3eea6e13f15e907204ef98220746eda56353d267d3c0c6be9a93d8597dd11a36e3e8fd970a9c40deb6f723_0",
+        "fingerprint": "('hello', PosixPath('targets/rule_id/hello.txt'), 'rules.rule_id..hello')_0",
         "is_ignored": false,
         "lines": "hello",
         "message": "found something",

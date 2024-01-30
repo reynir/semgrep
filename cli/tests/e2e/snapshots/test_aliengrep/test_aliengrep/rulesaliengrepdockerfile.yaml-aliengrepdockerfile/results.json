@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "411c3010fe82c9800d0abc3f43acd1890abbbe6b857d59f8c199cc6976aab2c0843da1ceea9a2c6d507af3961726ec8307619387b70ff112db67871241645b72_0",
+        "fingerprint": "('USER root\\n USER root\\n...\\nUSER root\\n', PosixPath('targets/aliengrep/dockerfile'), 'rules.aliengrep.double-root')_0",
         "is_ignored": false,
         "lines": "USER root",
         "message": "'USER' is specified twice\n",
@@ -55,7 +55,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "411c3010fe82c9800d0abc3f43acd1890abbbe6b857d59f8c199cc6976aab2c0843da1ceea9a2c6d507af3961726ec8307619387b70ff112db67871241645b72_1",
+        "fingerprint": "('USER root\\n USER root\\n...\\nUSER root\\n', PosixPath('targets/aliengrep/dockerfile'), 'rules.aliengrep.double-root')_1",
         "is_ignored": false,
         "lines": "USER root",
         "message": "'USER' is specified twice\n",

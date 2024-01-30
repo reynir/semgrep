@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "12717efc031af18241df1f8268d9b3ef480c9e13426d884b64652703415c526fa0703d6207c087055709bf2676fe345034d723cd09cee2924620ba58a9932bc5_0",
+        "fingerprint": "('new_password = request.data.get(\"password\", \"\")\\n...\\nuser.set_password(new_password)\\n...\\nuser.save(...)\\n def $F(..., new_password=\"\", ...):\\n  ...\\n  user.set_password(new_password)\\n', PosixPath('targets/autofix/django-none-password-default.py'), 'rules.autofix.python.django.security.passwords.use-none-for-password-default.use-none-for-password-default')_0",
         "fix": "new_password = request.data.get(\"password\", None)\n        validate_password(new_password, user=user)\n        user.set_password(new_password)\n        user.save()",
         "fixed_lines": [
           "        new_password = request.data.get(\"password\", None)",
@@ -107,7 +107,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "ba91fa5e126c6ea560de5c3fd70fe3c79cc5597f05dc7203c18dcf59d0eec77d0a40298380b9104759f906e9fca53a776eaa00a08e9b95a444ad39f0c194ba85_0",
+        "fingerprint": "('password = request.$W.get($X, \"\")\\n...\\nuser.set_password(password)\\n...\\nuser.save(...)\\n def create_user(..., password=\"\", ...):\\n  ...\\n  user.set_password(password)\\n', PosixPath('targets/autofix/django-none-password-default.py'), 'rules.autofix.python.django.security.passwords.use-none-for-password-default.use-none-for-password-default')_0",
         "fix": "def create_user(self, email, password=None):\n        \"\"\"\n        Creates and saves a Poster with the given email and password.\n        \"\"\"\n        if not email:\n            raise ValueError('Users must have an email address')\n\n        user = self.model(email=self.normalize_email(email))\n        user.set_password(password)\n        user.save(using=self._db)\n        return user",
         "fixed_lines": [
           "    def create_user(self, email, password=None):",

@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "a21a0ef18c6db7bc0471b4da228248bb8cbe7f103124e8ff4bd8d5912956a03bdd2785b6f5687ccea0bffe36e14359717bdaf5495829f11a2621cc159b80a923_0",
+        "fingerprint": "('f()', PosixPath('targets/per-rule-include/scan-me.py'), 'rules.example-python')_0",
         "is_ignored": false,
         "lines": "f()",
         "message": "Found something\n",

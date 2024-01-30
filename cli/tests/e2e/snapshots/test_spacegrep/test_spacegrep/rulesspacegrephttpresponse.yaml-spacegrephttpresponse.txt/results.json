@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "8a6e5fb9da91922f90e22f3cc26b9f475eb059f43e8da7525936eb5c0ef9e17c4dbd8276a428dbc6b1f3e33f2b01d52c7379d9669ad0e8a352a68b19669eb8ce_0",
+        "fingerprint": "('Content-Type: text/html Content-type: text/html content-type: text/html HTTP/1.1 200 OK\\n...\\n', PosixPath('targets/spacegrep/httpresponse.txt'), 'rules.spacegrep.content-type-text-html')_0",
         "is_ignored": false,
         "lines": "Content-Type: text/html",
         "message": "Detected text/html",

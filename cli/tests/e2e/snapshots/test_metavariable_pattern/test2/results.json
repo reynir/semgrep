@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "8eeb4a16077915572bb49fdc662ddd556e24d5708e78c4c605d046502bd31bf376e823ab708f568bb477805203a7c61a6a737f1feae3c306260a4da43c00fcf2_0",
+        "fingerprint": "('<?php echo $foobar; ?> ^\\\\s*<\\\\?(?:php|=)\\\\s+.* <?php echo $foobar; ?> echo ...; php value=\"<?php echo $foobar; ?>\" <input .../>', PosixPath('targets/metavariable-pattern/test2.php'), 'rules.metavariable-pattern.test')_0",
         "is_ignored": false,
         "lines": "<input type=\"date\" value=\"<?php echo $foobar; ?>\" />",
         "message": "Test",

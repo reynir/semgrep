@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "5f2838b4c01cae7d819b15b29a865ebff9de73977f9b4ba2618f1a3cce1c2fe4adfeada1c924f3c0bde71ea6a25d0ef582316ad8b83217a92bcc34e2b0a16205_0",
+        "fingerprint": "('[\\\\x{1F680}\ud83d\ude0a]|<[\u03b1-\u03d6]+>', PosixPath('targets/basic/regex-utf8.txt'), 'rules.test-regex')_0",
         "is_ignored": false,
         "lines": "\ud83d\ude0a (smiley)",
         "message": "check different ways to match UTF-8-encoded Unicode text",
@@ -41,7 +41,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "5f2838b4c01cae7d819b15b29a865ebff9de73977f9b4ba2618f1a3cce1c2fe4adfeada1c924f3c0bde71ea6a25d0ef582316ad8b83217a92bcc34e2b0a16205_1",
+        "fingerprint": "('[\\\\x{1F680}\ud83d\ude0a]|<[\u03b1-\u03d6]+>', PosixPath('targets/basic/regex-utf8.txt'), 'rules.test-regex')_1",
         "is_ignored": false,
         "lines": "\ud83d\ude80 (rocket)",
         "message": "check different ways to match UTF-8-encoded Unicode text",
@@ -66,7 +66,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "5f2838b4c01cae7d819b15b29a865ebff9de73977f9b4ba2618f1a3cce1c2fe4adfeada1c924f3c0bde71ea6a25d0ef582316ad8b83217a92bcc34e2b0a16205_2",
+        "fingerprint": "('[\\\\x{1F680}\ud83d\ude0a]|<[\u03b1-\u03d6]+>', PosixPath('targets/basic/regex-utf8.txt'), 'rules.test-regex')_2",
         "is_ignored": false,
         "lines": "<\u03b2\u03b3\u03b4> (Greek letters)",
         "message": "check different ways to match UTF-8-encoded Unicode text",

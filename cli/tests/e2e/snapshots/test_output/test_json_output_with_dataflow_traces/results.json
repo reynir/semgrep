@@ -106,7 +106,7 @@
           ]
         },
         "engine_kind": "OSS",
-        "fingerprint": "c103a760f6ce7176c2d5127a8c5afa47e83d41bef95586322d99febf0f148c2808bc6b168b31948e8fd10576f7f4edd69fb6d341c25ed9c259cde4e9164d7b96_0",
+        "fingerprint": "('$LHS res1 $LHS + res1 SCALAR USER_CONTROLLED SOURCE() USER_CONTROLLED res2 SINK(<... res2 ...>) USER_CONTROLLED and SCALAR', PosixPath('targets/taint/taint_trace.cpp'), 'rules.taint-trace')_0",
         "is_ignored": false,
         "lines": "    SINK(res2);                               // (5) sink res2",
         "message": "found an error",

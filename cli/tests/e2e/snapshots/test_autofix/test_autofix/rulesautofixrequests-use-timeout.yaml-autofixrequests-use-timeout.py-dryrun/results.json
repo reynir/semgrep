@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "82bea0cd053be7bce6374d62e4041e5f7a3004c361ca2ddac6ecb114fabc8dc626e509771ca32d3e08ed51155784565cd3e072822566c7a223c077ec2231594f_0",
+        "fingerprint": "('requests.$W(..., **$KWARGS) requests.$W(..., timeout=$N, ...) requests.delete(...) requests.get(...) requests.head(...) requests.patch(...) requests.post(...) requests.put(...) requests.request(...)', PosixPath('targets/autofix/requests-use-timeout.py'), 'rules.autofix.python.requests.best-practice.use-timeout.use-timeout')_0",
         "fix": "requests.get(url, timeout=30)",
         "fixed_lines": [
           "r = requests.get(url, timeout=30)"
@@ -45,7 +45,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "82bea0cd053be7bce6374d62e4041e5f7a3004c361ca2ddac6ecb114fabc8dc626e509771ca32d3e08ed51155784565cd3e072822566c7a223c077ec2231594f_1",
+        "fingerprint": "('requests.$W(..., **$KWARGS) requests.$W(..., timeout=$N, ...) requests.delete(...) requests.get(...) requests.head(...) requests.patch(...) requests.post(...) requests.put(...) requests.request(...)', PosixPath('targets/autofix/requests-use-timeout.py'), 'rules.autofix.python.requests.best-practice.use-timeout.use-timeout')_1",
         "fix": "requests.post(url, timeout=30)",
         "fixed_lines": [
           "r = requests.post(url, timeout=30)"
@@ -74,7 +74,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "82bea0cd053be7bce6374d62e4041e5f7a3004c361ca2ddac6ecb114fabc8dc626e509771ca32d3e08ed51155784565cd3e072822566c7a223c077ec2231594f_2",
+        "fingerprint": "('requests.$W(..., **$KWARGS) requests.$W(..., timeout=$N, ...) requests.delete(...) requests.get(...) requests.head(...) requests.patch(...) requests.post(...) requests.put(...) requests.request(...)', PosixPath('targets/autofix/requests-use-timeout.py'), 'rules.autofix.python.requests.best-practice.use-timeout.use-timeout')_2",
         "fix": "requests.request(\"GET\", url, timeout=30)",
         "fixed_lines": [
           "r = requests.request(\"GET\", url, timeout=30)"
@@ -103,7 +103,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "82bea0cd053be7bce6374d62e4041e5f7a3004c361ca2ddac6ecb114fabc8dc626e509771ca32d3e08ed51155784565cd3e072822566c7a223c077ec2231594f_3",
+        "fingerprint": "('requests.$W(..., **$KWARGS) requests.$W(..., timeout=$N, ...) requests.delete(...) requests.get(...) requests.head(...) requests.patch(...) requests.post(...) requests.put(...) requests.request(...)', PosixPath('targets/autofix/requests-use-timeout.py'), 'rules.autofix.python.requests.best-practice.use-timeout.use-timeout')_3",
         "fix": "requests.request(\"GET\", return_url(), timeout=30)",
         "fixed_lines": [
           "r = requests.request(\"GET\", return_url(), timeout=30)"
@@ -132,7 +132,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "82bea0cd053be7bce6374d62e4041e5f7a3004c361ca2ddac6ecb114fabc8dc626e509771ca32d3e08ed51155784565cd3e072822566c7a223c077ec2231594f_4",
+        "fingerprint": "('requests.$W(..., **$KWARGS) requests.$W(..., timeout=$N, ...) requests.delete(...) requests.get(...) requests.head(...) requests.patch(...) requests.post(...) requests.put(...) requests.request(...)', PosixPath('targets/autofix/requests-use-timeout.py'), 'rules.autofix.python.requests.best-practice.use-timeout.use-timeout')_4",
         "fix": "post(url, timeout=30)",
         "fixed_lines": [
           "    r = post(url, timeout=30)"

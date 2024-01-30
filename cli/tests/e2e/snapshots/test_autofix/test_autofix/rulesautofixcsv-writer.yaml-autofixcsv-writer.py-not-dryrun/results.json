@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "bb160b8fbbc6d1b067a8a1ef7573ce32f5c6b7b2e5bf3d03b8de000affd2484aafba1650e6d73d11ae253db1ea84ce9e17152f868fe7b21cb77275f1b93f817e_0",
+        "fingerprint": "('csv.writer(...) csv.writer(..., quoting=csv.QUOTE_ALL, ...)', PosixPath('targets/autofix/csv-writer.py'), 'rules.autofix.python.lang.security.unquoted-csv-writer.unquoted-csv-writer')_0",
         "fix": "csv.writer(csvfile, delimiter=',', quotechar='\"', quoting=csv.QUOTE_ALL)",
         "is_ignored": false,
         "lines": "csv.writer(csvfile, delimiter=',', quotechar='\"')",
@@ -48,7 +48,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "bb160b8fbbc6d1b067a8a1ef7573ce32f5c6b7b2e5bf3d03b8de000affd2484aafba1650e6d73d11ae253db1ea84ce9e17152f868fe7b21cb77275f1b93f817e_1",
+        "fingerprint": "('csv.writer(...) csv.writer(..., quoting=csv.QUOTE_ALL, ...)', PosixPath('targets/autofix/csv-writer.py'), 'rules.autofix.python.lang.security.unquoted-csv-writer.unquoted-csv-writer')_1",
         "fix": "csv.writer(get_file(), delimiter=',', quotechar='\"', quoting=csv.QUOTE_ALL)",
         "is_ignored": false,
         "lines": "csv.writer(get_file(), delimiter=',', quotechar='\"')",

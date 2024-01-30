@@ -26,7 +26,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "0aca48f2d3356594f3bdd1e267abe3ebc7e5cda598914f04a7678a5488b1548b490cb038f875227679f2eded65405b4604f1f203c7b7b8372b68e08df9819216_0",
+        "fingerprint": "('bad()', PosixPath('targets/dependency_aware/poetry_with_uppercase_package_name/sca-poetry.py'), 'rules.dependency_aware.python-poetry-sca')_0",
         "is_ignored": false,
         "lines": "bad()",
         "message": "oh no",

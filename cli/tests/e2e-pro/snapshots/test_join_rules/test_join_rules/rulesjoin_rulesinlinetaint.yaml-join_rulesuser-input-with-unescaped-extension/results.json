@@ -14,7 +14,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "50d48eee376d76bf6138c89d3c436498efe455d50d7b7d5c6385be3aceb55a89a13b8faee89d5bf5ff1d9d8dc8be116a4f50a373be07acd9360be713425808db_0",
+        "fingerprint": "('          $ $ $ $TEMPLATE .*(?<!html)$ flask.render_template(\"$TEMPLATE\", ..., $KWARG=person_name_full, ...) INFO flask.request join rule python taint user-input INFO generic join rule template-vars {{ person_name_full }}\\n user-input.$KWARG == template-vars.person_name_full user-input.$TEMPLATE < template-vars.path - - - - . . . . < = = A A A E E G K L M P R R T T V W a a a a a e e e e e e h i i l l m m n n p p p p p r r r r s s s s t t t t t t t u u u u v v', PosixPath('targets/join_rules/user-input-with-unescaped-extension/launch.htm.j2'), 'rules.join_rules.inline.flask-likely-xss')_0",
         "is_ignored": false,
         "lines": "        <li>person_name_full is <b>{{ person_name_full }}</b></li>",
         "message": "Detected a XSS vulnerability: '$VAR' is rendered\nunsafely in '$TEMPLATE'.\n",

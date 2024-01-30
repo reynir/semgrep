@@ -14,7 +14,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "6ea4f187d9331f436fc7511a2eeeedfb22f8f068a3065699cc3652132614eb5a6f8f644cf2412d231423428649d927760fc118d92b6d037d39961dbc962b56dc_0",
+        "fingerprint": "('                $ $ $ $ $ $ - - - - . . . . . . = = = = > A A A A A C C C C D E E E E E E E E H I K L L L L L L L L M M N N O R R S T a a a a a a a a a c c c c callgraph rules/join_rules/recursive/java-callgraph-example/rule-parts/java-callgraph.yaml formatted-sql rules/join_rules/recursive/java-callgraph-example/rule-parts/method-parameter-formatted-sql.yaml rules/join_rules/recursive/java-callgraph-example/rule-parts/java-spring-user-input.yaml user-input callgraph.$CALLEE == formatted-sql.fetch callgraph.$CALLER --> callgraph.$CALLEE user-input.$SINK == callgraph.$CALLER d e e f g g g g h h h h i l l l l l l l l l m n o p p p p p q r r r r r r s s t t t u u', PosixPath('targets/join_rules/recursive/java-callgraph-example/vulnado/User.java'), 'rules.join_rules.recursive.java-callgraph-example.spring-sql-injection')_0",
         "is_ignored": false,
         "lines": "      String query = \"select * from users where username = '\" + un + \"' limit 1\";",
         "message": "SQLi",

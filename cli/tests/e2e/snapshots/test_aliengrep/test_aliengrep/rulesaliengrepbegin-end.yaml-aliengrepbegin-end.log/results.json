@@ -16,7 +16,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "3c44889fc45ac3e4c2277597525d58ea757deae4a7fd21d2ab0cab0b4ff34954237a5917ac25d83b3bbeb0bb3f7b5fc6408d226960e0dd97045c3d97a61d3ecc_0",
+        "fingerprint": "('begin ... end', PosixPath('targets/aliengrep/begin-end.log'), 'rules.aliengrep.begin-end')_0",
         "is_ignored": false,
         "lines": "begin find me end",
         "message": "found something",
@@ -41,7 +41,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "3c44889fc45ac3e4c2277597525d58ea757deae4a7fd21d2ab0cab0b4ff34954237a5917ac25d83b3bbeb0bb3f7b5fc6408d226960e0dd97045c3d97a61d3ecc_1",
+        "fingerprint": "('begin ... end', PosixPath('targets/aliengrep/begin-end.log'), 'rules.aliengrep.begin-end')_1",
         "is_ignored": false,
         "lines": "hello begin find me too end.",
         "message": "found something",

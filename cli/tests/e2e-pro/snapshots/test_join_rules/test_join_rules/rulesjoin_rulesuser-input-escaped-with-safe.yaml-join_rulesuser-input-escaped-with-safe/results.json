@@ -14,7 +14,7 @@
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "76efda401b3c36d1d3005bc739597a602c6778aebafb41fa18ad535ea2b862eae42541a4415f817144922a55c800adce543e2593ee28cd7069c7631f79c5fb2e_0",
+        "fingerprint": "('                $ $ $ $ $ $...EXPR query rules/join_rules/rule_parts/template-var-safe.yaml template-vars render-template-input rules/join_rules/rule_parts/render-template-input.yaml rules/join_rules/rule_parts/flask-user-input.yaml user-input render-template-input.$TEMPLATE ~ template-vars.path render-template-input.query == template-vars.query user-input.query == render-template-input.$INPUT - - - - - - - - - . . . . . . = = = = A A A A E E I L M N P P R R R T T T U V V V a a a a a a a a d d d e e e e e e e e e e e e e e e e e h i i i i l l l l l m m m m m n n n n n n n p p p p p p p p p p r r r r r r r r r s s s t t t t t t t t t t t t t t t u u u u u v v ~', PosixPath('targets/join_rules/user-input-escaped-with-safe/search.html'), 'rules.join_rules.user-input-escaped-with-safe')_0",
         "is_ignored": false,
         "lines": "<h1>Search results for \"{{ query|safe }}\"</h1>",
         "message": "The variable '$VAR' is most likely an XSS. It originates as user input and is unsafely rendered with the '| safe' filter.",

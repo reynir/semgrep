@@ -26,7 +26,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "c123592ddfe123d603edda0279da7ed0d3a36da7c505afd2c080696353b058445ef61864a6b4def82455d237b74ec583112148575878faf2d5a17097052c863f_0",
+        "fingerprint": "('', PosixPath('targets/dependency_aware/php/composer.lock'), 'rules.dependency_aware.php-sca')_0",
         "is_ignored": false,
         "lines": "            \"name\": \"bad/package\",",
         "message": "oh no",

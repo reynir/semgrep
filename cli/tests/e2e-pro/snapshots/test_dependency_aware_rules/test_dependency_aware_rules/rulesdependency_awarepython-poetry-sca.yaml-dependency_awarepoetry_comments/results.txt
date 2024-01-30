@@ -25,7 +25,7 @@ SEMGREP_USER_AGENT_APPEND="pytest" SEMGREP_SETTINGS_FILE="<MASKED>" SEMGREP_VERS
       },
       "extra": {
         "engine_kind": "OSS",
-        "fingerprint": "de9ffeaf3332a72a7cedcba9916d0d6a0bc83af2723157471d9d26991b90b68062162880343e160d64ec2f315e097d6d81d1f38200d111b488b01771a4458009_0",
+        "fingerprint": "('', PosixPath('targets/dependency_aware/poetry_comments/poetry.lock'), 'rules.dependency_aware.python-poetry-sca')_0",
         "is_ignored": false,
         "lines": "name = \"faker\"",
         "message": "oh no",
